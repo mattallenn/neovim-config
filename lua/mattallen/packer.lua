@@ -44,6 +44,13 @@ use {
 
 use 'vim-airline/vim-airline'
 use 'vim-airline/vim-airline-themes'
+
+use 'tpope/vim-commentary'
+
+use({ "iamcco/markdown-preview.nvim", 
+     run = "cd app && npm install", 
+     setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+     ft = { "markdown" }, })
 end)
 
 
