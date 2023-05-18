@@ -42,8 +42,11 @@ use {
     }
 }
 
-use 'vim-airline/vim-airline'
-use 'vim-airline/vim-airline-themes'
+--Lualine
+use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+}
 
 use 'tpope/vim-commentary'
 
@@ -51,6 +54,17 @@ use({ "iamcco/markdown-preview.nvim",
      run = "cd app && npm install", 
      setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
      ft = { "markdown" }, })
+
+use {
+  'nvim-telescope/telescope.nvim', tag = '0.1.1',
+-- or                            , branch = '0.1.x',
+  requires = { {'nvim-lua/plenary.nvim'} }
+}
+use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+}
+
 end)
 
 
