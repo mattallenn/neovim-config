@@ -68,8 +68,13 @@ use {
 --bufferline (tabs)
 use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 
---Startify
-use 'mhinz/vim-startify'
+use {
+    'goolord/alpha-nvim',
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end
+}
 end)
+
 
 
