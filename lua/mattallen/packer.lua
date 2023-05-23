@@ -67,6 +67,9 @@ use {
 
 --bufferline (tabs)
 use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+
+--Startify
+use 'mhinz/vim-startify'
 end)
 
 
