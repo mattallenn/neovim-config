@@ -1,4 +1,11 @@
-return require('packer').startup(function(use)
+local packer = require('packer')
+
+packer.init {
+    max_jobs = 3,
+}
+
+packer.startup(function(use)
+
     use 'wbthomason/packer.nvim'
       -- Packer can manage itself
 -- Using Packer
@@ -8,7 +15,7 @@ use({
     config = function()
         vim.cmd('colorscheme onedark')
     end
-})
+}) 
 
 use {
     "nvim-neo-tree/neo-tree.nvim",
@@ -50,10 +57,8 @@ use {
 
 use 'tpope/vim-commentary'
 
-use({ "iamcco/markdown-preview.nvim", 
-     run = "cd app && npm install", 
-     setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
-     ft = { "markdown" }, })
+-- Markdown Preview
+use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
 use {
   'nvim-telescope/telescope.nvim', tag = '0.1.1',
@@ -68,12 +73,6 @@ use {
 --bufferline (tabs)
 use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 
-use {
-    'goolord/alpha-nvim',
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.dashboard'.config)
-    end
-}
 end)
 
 
