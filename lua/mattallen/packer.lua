@@ -9,14 +9,23 @@ packer.startup(function(use)
     use 'wbthomason/packer.nvim'
       -- Packer can manage itself
 -- Using Packer
+-- use({
+--     'navarasu/onedark.nvim',
+--     as = 'onedark',
+--     config = function()
+--         vim.cmd('colorscheme onedark')
+--     end
+-- })
+
 use({
-    --'navarasu/onedark.nvim',
-    'neanias/everforest-nvim',
+    'sainnhe/everforest',
     as = 'everforest',
     config = function()
         vim.cmd('colorscheme everforest')
     end
-}) 
+})
+
+
 
 use {
     "nvim-neo-tree/neo-tree.nvim",
