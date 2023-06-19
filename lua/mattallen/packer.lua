@@ -10,10 +10,11 @@ packer.startup(function(use)
       -- Packer can manage itself
 -- Using Packer
 use({
-    'navarasu/onedark.nvim',
-    as = 'onedark',
+    --'navarasu/onedark.nvim',
+    'neanias/everforest-nvim',
+    as = 'everforest',
     config = function()
-        vim.cmd('colorscheme onedark')
+        vim.cmd('colorscheme everforest')
     end
 }) 
 
