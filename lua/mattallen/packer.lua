@@ -9,21 +9,21 @@ packer.startup(function(use)
     use 'wbthomason/packer.nvim'
       -- Packer can manage itself
 -- Using Packer
--- use({
---     'navarasu/onedark.nvim',
---     as = 'onedark',
---     config = function()
---         vim.cmd('colorscheme onedark')
---     end
--- })
-
 use({
-    'sainnhe/everforest',
-    as = 'everforest',
+    'navarasu/onedark.nvim',
+    as = 'onedark',
     config = function()
-        vim.cmd('colorscheme everforest')
+        vim.cmd('colorscheme onedark')
     end
 })
+ 
+-- use({
+--     'sainnhe/everforest',
+--     as = 'everforest',
+--     config = function()
+--         vim.cmd('colorscheme everforest')
+--     end
+-- })
 
 
 
@@ -75,13 +75,22 @@ use {
 -- or                            , branch = '0.1.x',
   requires = { {'nvim-lua/plenary.nvim'} }
 }
+
 use {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
+    run = function()
+        local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+        ts_update()
+    end,
 }
 
 --bufferline (tabs)
 use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+
+
+
+-- Github copilot 
+use {'github/copilot.vim'}
 
 end)
 
